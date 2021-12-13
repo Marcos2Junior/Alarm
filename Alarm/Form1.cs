@@ -19,6 +19,7 @@ namespace Alarm
             "Hoje vai dar tudo certo.",
             "Dias de luz sempre retornam para quem iluminado está"
         };
+
         public Form1()
         {
             InitializeComponent();
@@ -26,7 +27,6 @@ namespace Alarm
             player.SoundLocation = "alarm.wav";
             timer1.Start();
             dateTimePicker1.Value = DateTime.Now.AddDays(1);
-            timer1_Tick(null, null);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -43,6 +43,8 @@ namespace Alarm
 
         private void Start()
         {
+            Cursor.Position = new System.Drawing.Point(0, 0);
+            Activate();
             if (dateTimePicker1.Enabled)
             {
                 dateTimePicker1.Enabled = false;
